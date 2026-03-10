@@ -1,0 +1,194 @@
+//background colors
+
+bg-primary : #0f172a
+bg-secondary : #1e293b
+
+--------------------------------------
+accent color
+accent : #64ffda
+
+--------------------------------------
+text-color 
+
+text-main : #e2e8f0
+text-muted : #94a3b8
+
+--------------------------------------
+tailwind hax color
+bg-[#0f172a]
+text-[#e2e8f0]
+text-[#64ffda]
+
+--------------------------------------
+folder strucute =
+
+src
+│
+├── components
+│   ├── Navbar.jsx
+│   ├── PostCard.jsx
+│   ├── CreatePost.jsx
+│   ├── ProfileCard.jsx
+│
+├── pages
+│   ├── Home.jsx
+│   ├── Login.jsx
+│   ├── Signup.jsx
+│   ├── Profile.jsx
+│   ├── Dashboard.jsx
+│
+├── context
+│   └── AuthContext.jsx
+│
+├── firebase
+│   └── firebaseConfig.js
+│
+├── hooks
+│   └── useAuth.js
+│
+├── utils
+│   └── helpers.js
+│
+├── App.jsx
+└── main.jsx
+
+
+
+--------------------------------------
+
+firebase backend = 
+
+1. create project
+name = DevConnect
+
+--------------------------------------
+2.Authentication
+Email / Password
+
+--------------------------------------
+3.Firestore Database = 
+Create database.
+
+--------------------------------------
+4.Storage
+For image upload.
+
+--------------------------------------
+Firebase Config File
+file name with location = src/firebase/firebaseConfig.js
+
+code -:-
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
+};
+
+export const app = initializeApp(firebaseConfig);
+
+--------------------------------------
+
+6.Authentication System =
+
+Pages:
+
+Signup
+Login
+Logout
+
+Signup fields = 
+
+username
+email
+password
+profileImage
+
+
+
+Use Firebase auth functions =
+
+createUserWithEmailAndPassword
+signInWithEmailAndPassword
+signOut
+
+--------------------------------------
+7.Posts System =
+
+Users share projects.
+Post structure:
+
+title
+description
+projectLink
+image
+userId
+createdAt
+likes
+
+Firestore collection =
+posts
+
+--------------------------------------
+8.Home Page = 
+
+Home page show:
+all developer posts
+
+Each card shows = 
+
+project image
+title
+description
+like button
+
+Component = 
+
+PostCard.jsx
+
+
+--------------------------------------
+9.Profile Page
+
+Show =
+
+profile image
+name
+bio
+skills
+github link
+all posts
+
+--------------------------------------
+10. Image Upload
+
+Use Firebase Storage.
+
+Users upload: = 
+
+profile image
+project image
+
+--------------------------------------
+11.Advanced Features (Later)
+
+Add later =
+
+Follow developers
+Comments
+Search developers
+Dark mode toggle
+Notifications
+
+
+--------------------------------------
+12.Deployment
+
+Deploy using = 
+
+Vercel
+Firebase hosting
