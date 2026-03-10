@@ -318,3 +318,27 @@ Firebase Hosting
 ---
 
 END OF BACKEND PLAN
+
+
+
+
+
+
+
+
+
+
+===========================================================
+
+Authentication
+User profiles
+Create post
+Edit post
+Delete post
+Like system
+Comments
+Follow developers
+Image upload
+Protected routes
+
+using firebase --:--
