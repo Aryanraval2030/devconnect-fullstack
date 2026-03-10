@@ -91,7 +91,7 @@ Responsive: flex flex-col md:flex-row
 
 
 ==================================================================
------------------first time user ---------------------------------
+-----------------first time user---------hero section-------------
 ==================================================================
 
 
@@ -226,11 +226,11 @@ NAVBAR / HEADER STRUCTURE
    - If user NOT logged in:
        - Login
        - Sign Up (CTA / highlighted)
-   - If user LOGGED IN:
+   - If user LOGGED IN: 
        - Avatar (click → dropdown)
-           - Profile
-           - Settings
-           - Logout
+       - Profile
+       - Settings
+       - Logout
        - Notifications (optional)
 
 4️⃣ Optional Features
