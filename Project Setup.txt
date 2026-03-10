@@ -21,7 +21,6 @@ text-[#64ffda]
 
 --------------------------------------
 folder strucute =
-
 src
 │
 ├── components
@@ -29,6 +28,9 @@ src
 │   ├── PostCard.jsx
 │   ├── CreatePost.jsx
 │   ├── ProfileCard.jsx
+│   ├── CommentBox.jsx
+│   ├── LikeButton.jsx
+│   ├── Loader.jsx
 │
 ├── pages
 │   ├── Home.jsx
@@ -36,25 +38,43 @@ src
 │   ├── Signup.jsx
 │   ├── Profile.jsx
 │   ├── Dashboard.jsx
+│   ├── CreatePostPage.jsx
+│   ├── EditProfile.jsx
 │
 ├── context
 │   └── AuthContext.jsx
 │
 ├── firebase
-│   └── firebaseConfig.js
+│   ├── firebaseConfig.js
+│   ├── authService.js
+│   ├── postService.js
+│   ├── userService.js
+│   ├── storageService.js
 │
 ├── hooks
-│   └── useAuth.js
+│   ├── useAuth.js
+│   ├── usePosts.js
+│   ├── useUser.js
 │
 ├── utils
-│   └── helpers.js
+│   ├── helpers.js
+│   ├── formatDate.js
+│   ├── validations.js
+│
+├── routes
+│   └── ProtectedRoute.jsx
+│
+├── styles
+│   └── theme.js
 │
 ├── App.jsx
 └── main.jsx
 
 
-
+==================================================================
 --------------------------------------
+==================================================================
+
 
 firebase backend = 
 
