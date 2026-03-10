@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "../components/Header";
-import Explore from "./Explore";
 import Hero from "./Hero";
+import Sectionfirst from "./Sectionfirst";
 
 function Home() {
   return (
@@ -10,7 +10,7 @@ function Home() {
         <Header />
         <Routes>
           <Route path="/" element={<Hero />}></Route>
-          <Route path="/explore" element={<Explore />}></Route>
+          <Route path="/" element={<Sectionfirst />}></Route>
         </Routes>
       </Router>
     </div>
