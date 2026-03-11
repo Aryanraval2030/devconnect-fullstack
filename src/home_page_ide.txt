@@ -292,3 +292,31 @@ Footer
      short text             short text
 
 --------------------------------
+
+
+
+=============================================
+-----------------------------------------
+           Explore Developers
+ Discover talented developers worldwide
+-----------------------------------------
+
+[ Dev Card ]  [ Dev Card ]  [ Dev Card ]
+
+[ Dev Card ]  [ Dev Card ]  [ Dev Card ]
+
+        [ View All Developers ]
+-----------------------------------------
+
+========================================= 
+
++--------------------------------+
+|           (Avatar)             |
+|                                |
+|        Aryan Raval             |
+|      Frontend Developer        |
+|                                |
+|   React • Tailwind • Firebase  |
+|                                |
+|   [ View Profile ]  [ Follow ] |
++--------------------------------+

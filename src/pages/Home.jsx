@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Explore from "./Explore";
 import Hero from "./Hero";
 import Sectionfirst from "./Sectionfirst";
 import Workform from "./Workform";
@@ -10,6 +11,7 @@ function Home() {
       <Hero />
       <Sectionfirst />
       <Workform/>
+      <Explore/>
     </>
   );
 }
