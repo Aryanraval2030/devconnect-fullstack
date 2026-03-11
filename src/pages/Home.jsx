@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Hero from "./Hero";
 import Sectionfirst from "./Sectionfirst";
+import Workform from "./Workform";
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <Header />
       <Hero />
       <Sectionfirst />
+      <Workform/>
     </>
   );
 }

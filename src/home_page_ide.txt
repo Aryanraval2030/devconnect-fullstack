@@ -244,3 +244,51 @@ NAVBAR / HEADER STRUCTURE
    - Mobile:
        - Hamburger menu
        - Slide-in links / dropdown
+
+
+
+
+
+
+
+
+
+
+
+=========================================
+Navbar
+↓
+Hero Section
+↓
+Features Section
+↓
+How DevConnect Works
+↓
+Explore Developers
+↓
+Recent Projects / Posts
+↓
+Call To Action Section
+↓
+Footer
+
+
+
+
+
+
+?/////////////////////////
+--------------------------------
+        How DevConnect Works
+--------------------------------
+
+ [1] Create Account     [2] Build Profile
+     icon                   icon
+     short text             short text
+
+
+ [3] Share Projects     [4] Connect Developers
+     icon                   icon
+     short text             short text
+
+--------------------------------
