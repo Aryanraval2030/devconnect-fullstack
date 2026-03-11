@@ -13,7 +13,7 @@ function Hero() {
           mouseInteractive={true}
         />
       </div>
-      <div className="absolute top-[100px] pointer-events-none left-[0] w-[100vw] mt-[10px] text-center">
+      <div className="absolute top-[100px] pointer-events-none left-[0] w-[100%] mt-[10px] text-center">
         <div className="">
           <h1 className="leading-[10rem] text-4xl text-[#3b82f6]">
             Connect with Developers Worldwide
