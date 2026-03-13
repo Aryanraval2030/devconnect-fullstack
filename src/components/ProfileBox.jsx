@@ -1,13 +1,17 @@
-function ProfileBox({ avatar, username, role, skills, viewPro }) {
+function ProfileBox({ username, role, skills }) {
   return (
-    <div className=" border-2 h-[50vh] w-[40vw] border-white">
-      <h1>{avatar}</h1>
-      <h1>{username}</h1>
-      <h1>{role}</h1>
-      <div>
-        <h1>{skills} </h1>
-      </div>
-      <button>{viewPro}</button>
+    <div className="min-w-[250px] bg-[#1e293b] p-6 rounded-xl text-center hover:scale-105 transition">
+      <div className="w-16 h-16 bg-gray-500 rounded-full mx-auto mb-4 border-2"></div>
+
+      <h2 className="text-lg font-semibold">{username}</h2>
+
+      <p className="text-gray-400 text-sm">{role}</p>
+
+      <p className="text-blue-400 text-sm mt-2">{skills}</p>
+
+      <button className="mt-4 bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
+        View Profile
+      </button>
     </div>
   );
 }
