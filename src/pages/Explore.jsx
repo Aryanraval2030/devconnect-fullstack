@@ -1,6 +1,19 @@
 import ProfileBox from "../components/ProfileBox";
+import withHoverEffect from "../components/withHoverEffect";
+const Enhance = withHoverEffect(ProfileBox);
 
 function Explore() {
+  const developers = [
+    {
+      username: "Aryan",
+      role: "Full Stack Dev",
+      skills: "React Tailwind Firebase",
+    },
+    { username: "Rahul", role: "Frontend Dev", skills: "html css" },
+    { username: "Sara", role: "UI Developer", skills: "Figma Tailwind next.js" },
+    { username: "John", role: "Backend Dev", skills: "Node Firebase" },
+    { username: "Alex", role: "React Dev", skills: "React Redux chatgpt" },
+  ];
   return (
     <div id="explore" className="mt-10 text-white px-[5vw] overflow-hidden">
       <h1 className="text-3xl font-bold text-center">Explore Developers</h1>
@@ -11,45 +24,10 @@ function Explore() {
 
       {/* slider */}
       <div className="group overflow-hidden pt-3 pb-3">
-        <div className="flex gap-8 animate-slide h-[50vh] group-hover:[animation-play-state:paused]">
-          <ProfileBox
-            username="Aryan"
-            role="Full Stack Dev"
-            skills="React Tailwind Firebase"
-          />
-          <ProfileBox
-            username="Rahul"
-            role="Frontend Dev"
-            skills="HTML CSS JS"
-          />
-          <ProfileBox
-            username="Sara"
-            role="UI Developer"
-            skills="Figma Tailwind"
-          />
-          <ProfileBox
-            username="John"
-            role="Backend Dev"
-            skills="Node Firebase"
-          />
-          <ProfileBox username="Alex" role="React Dev" skills="React Redux" />
-
-          {/* repeat cards for infinite slider */}
-          <ProfileBox
-            username="Aryan"
-            role="Full Stack Dev"
-            skills="React Tailwind Firebase"
-          />
-          <ProfileBox
-            username="Rahul"
-            role="Frontend Dev"
-            skills="HTML CSS JS"
-          />
-          <ProfileBox
-            username="Sara"
-            role="UI Developer"
-            skills="Figma Tailwind"
-          />
+        <div className="flex gap-8 animate-slide py-[5vh] h-auto w-[102vw] group-hover:[animation-play-state:paused]">
+          {developers.map((dev, inx) => (
+            <Enhance key={inx} {...dev} />
+          ))}
         </div>
       </div>
     </div>
