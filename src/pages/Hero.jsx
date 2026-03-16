@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <div className="relative min-h-[90vh] pt-[30vh] flex items-center justify-center overflow-hidden bg-[#020617]">
+    <div id="home" className="relative min-h-[90vh] pt-[30vh] flex items-center justify-center overflow-hidden bg-[#020617]">
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px] animate-pulse"></div>
       <div
         className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/20 rounded-full blur-[120px] animate-pulse"

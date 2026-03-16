@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Userontext from "./UserContext";
 
 function Header() {
   return (
@@ -9,7 +10,7 @@ function Header() {
         </div>
         <ul className="flex justify-between items-center gap-10">
           <li className="cursor-pointer">
-            <Link to="/">home</Link>
+            <a href="#home">home</a>
           </li>
           <li>
             <a href="#explore">explore</a>
@@ -17,6 +18,12 @@ function Header() {
           <li>
             <Link to="/dashboard">dashboard</Link>
           </li>
+          <button
+            onClick={toggleTheme}
+            className="border px-3 py-1 rounded mt-2"
+          >
+            Toggle Theme (Current: {theme})
+          </button>
         </ul>
       </div>
     </header>
