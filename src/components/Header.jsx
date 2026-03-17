@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Userontext from "./UserContext";
 
 function Header() {
   return (
@@ -18,12 +17,7 @@ function Header() {
           <li>
             <Link to="/dashboard">dashboard</Link>
           </li>
-          <button
-            onClick={toggleTheme}
-            className="border px-3 py-1 rounded mt-2"
-          >
-            Toggle Theme (Current: {theme})
-          </button>
+        
         </ul>
       </div>
     </header>
