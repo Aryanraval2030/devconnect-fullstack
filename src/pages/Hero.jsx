@@ -1,6 +1,14 @@
+import { useContext } from "react";
+import ThemeContext from "../components/UserContext";
+
 function Hero() {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div id="home" className="relative min-h-[90vh] pt-[30vh] flex items-center justify-center overflow-hidden bg-[#020617]">
+    <div
+      id="home"
+      className={`relative min-h-[90vh] pt-[30vh] flex items-center justify-center overflow-hidden ${theme === "light" ? "bg-white" : "bg-[#020617]"}`}
+    >
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px] animate-pulse"></div>
       <div
         className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/20 rounded-full blur-[120px] animate-pulse"
@@ -21,7 +29,7 @@ function Hero() {
           </span>
         </h1>
 
-        <p className="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl mb-12 leading-relaxed">
+        <p className="max-w-2xl mx-auto text-lg md:text-xl mb-12 leading-relaxed">
           The ultimate space to share your projects, follow top-tier developers,
           and scale your career through global collaboration.
         </p>
@@ -32,7 +40,7 @@ function Hero() {
             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
           </button>
 
-          <button className="px-10 py-4 rounded-full font-bold text-lg text-white border-2 border-slate-700 hover:border-blue-500 hover:bg-slate-800/50 transition-all duration-300 active:scale-95">
+          <button className="px-10 py-4 rounded-full font-bold text-lg border-2 border-slate-700 hover:border-blue-500 hover:bg-slate-800/50 transition-all duration-300 active:scale-95">
             Explore Projects
           </button>
         </div>
@@ -40,15 +48,15 @@ function Hero() {
         <div className="mt-20 pt-10 border-t border-slate-800/50 flex flex-wrap justify-center gap-10 md:gap-20 opacity-60">
           <div className="text-center">
             <h3 className="text-2xl font-bold">50K+</h3>
-            <p className="text-sm text-gray-500">Developers</p>
+            <p className="text-sm ">Developers</p>
           </div>
           <div className="text-center">
             <h3 className="text-2xl font-bold">120+</h3>
-            <p className="text-sm text-gray-500">Countries</p>
+            <p className="text-sm ">Countries</p>
           </div>
           <div className="text-center">
             <h3 className="text-2xl font-bold">10K+</h3>
-            <p className="text-sm text-gray-500">Projects</p>
+            <p className="text-sm ">Projects</p>
           </div>
         </div>
       </div>

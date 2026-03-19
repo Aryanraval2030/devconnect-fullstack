@@ -21,8 +21,8 @@ function Header() {
             <Link to="/dashboard">dashboard</Link>
           </li>
           <li>
-            <button onClick={toggleTheme} className="border px-3 py-1 rounded">
-              {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+            <button onClick={toggleTheme} className=" px-3 py-1 rounded">
+              {theme === "light" ? "☀️" : "🌙"}
             </button>
           </li>
         </ul>

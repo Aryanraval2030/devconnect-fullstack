@@ -28,7 +28,7 @@ function Workform() {
   ];
 
   return (
-    <div className="py-24 text-center text-white">
+    <div className="py-24 text-center ">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold mb-16 tracking-tight">
           How <span className="text-blue-500">DevConnect</span> Works
@@ -38,13 +38,13 @@ function Workform() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="group border border-slate-800 rounded-3xl p-8 flex flex-col items-center transition-all duration-300 hover:border-blue-500 hover:bg-blue-500/5 hover:-translate-y-2 bg-slate-900/50 backdrop-blur-sm"
+              className="group border border-slate-800 rounded-3xl p-8 flex flex-col items-center transition-all duration-300 hover:border-blue-500 hover:-translate-y-2"
             >
               <div className="text-blue-500 group-hover:text-blue-400 transition-colors mb-4">
                 {step.icon}
               </div>
               <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-              <p className="text-slate-400 text-sm">{step.desc}</p>
+              <p className=" text-sm">{step.desc}</p>
             </div>
           ))}
         </div>
