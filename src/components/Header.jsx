@@ -21,6 +21,7 @@ function Header() {
         backdrop-blur-[6] 
         fixed z-20 
         rounded-full
+        
       "
       >
         {/* Logo */}
