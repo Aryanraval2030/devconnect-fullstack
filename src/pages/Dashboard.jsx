@@ -24,8 +24,8 @@ function Dashboard() {
   if (!user) return <p>Loading user data...</p>;
 
   return (
-    <div className="flex h-[100vh] w-[100%] pt-[25vh]">
-      <aside className="border-r rounded-xl leading-[50px] text-xl pl-4 pt-[5px] border-purple-700  w-[20%]">
+    <div className="flex h-[96vh] w-[100%] pt-[20vh] pr-6 pl-6">
+      <aside className="border-r rounded-xl leading-[50px] text-xl pt-[5px] border-purple-700  w-[20%]">
         <h1>Dashboard</h1>
 
         <ul>
@@ -79,7 +79,26 @@ function Dashboard() {
           </li>
         </ul>
       </aside>
-      <div className="pl-[10px] pt-[5px] w-[80%]">user dashboard data</div>
+
+      <div className="w-[80%] grid grid-cols-1 md:grid-cols-[40%_60%]">
+        <div className="grid grid-rows-2">
+          <div className="flex justify-center items-center">
+            <div className="bg-purple-500 rounded-full h-[250px] w-[250px] flex justify-center items-center text-4xl">
+              Profile
+            </div>
+          </div>
+          <div className="flex justify-center gap-3 pt-[10%]">
+            <button className="bg-purple-950 rounded-md py-[10px] text-xl px-[15px] h-fit text-white">
+              follower 10k
+            </button>
+          </div>
+        </div>
+        <div className="border-2 border-purple-900">
+          <div className="border-2">
+            progress
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
