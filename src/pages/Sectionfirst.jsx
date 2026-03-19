@@ -9,13 +9,19 @@ import { FaLightbulb } from "react-icons/fa";
 function Sectionfirst() {
   return (
     <div>
-      <div className="text-4xl text-white text-center  px-[30px] mt-[15vh]">
-        <h1>Empowering Developers Worldwide</h1>
-        <h1>
-          Everything you need to connect, collaborate, and grow as a developer.
-        </h1>
+      <div className="text-4xl text-white text-center px-[30px] mt-[15vh]">
+        <div className="text-center px-4 sm:px-6 mt-[10vh] md:mt-[15vh]">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl text-white font-bold leading-snug">
+            Empowering Developers Worldwide
+          </h1>
+
+          <h1 className="text-lg sm:text-xl md:text-2xl text-gray-300 mt-2 leading-relaxed">
+            Everything you need to connect, collaborate, and grow as a
+            developer.
+          </h1>
+        </div>
       </div>
-      <div className="flex flex-wrap gap-6 justify-center p-10">
+      <div className="flex flex-wrap gap-6 md:gap-4 sm:gap-2 justify-center p-10">
         <Box
           icon={<FaRegUser size={40} className="mt-1 mb-1" />}
           title="Collaborate Seamlessly"
