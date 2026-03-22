@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Explore from "./Explore";
 import Hero from "./Hero";
@@ -10,8 +11,8 @@ function Home() {
       <Header />
       <Hero />
       <Sectionfirst />
-      <Workform/>
-      <Explore/>
+      <Workform />
+      <Explore />
     </>
   );
 }

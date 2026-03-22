@@ -7,6 +7,7 @@ import Signup from "./pages/Signup";
 import ThemeContext from "./components/UserContext";
 import { useContext } from "react";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   const { theme } = useContext(ThemeContext); // 🔥 important
@@ -33,6 +34,7 @@ function App() {
             }
           />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
