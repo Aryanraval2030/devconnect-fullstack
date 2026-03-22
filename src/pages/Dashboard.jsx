@@ -9,9 +9,9 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { auth } from "../firebase/firebaseConfig";
-import { db } from "../firebase/firebaseConfig";
-import { getDoc } from "firebase/firestore";
+import { auth, db } from "../firebase/firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
+
 function Dashboard() {
   const [user, setUser] = useState(null);
   const [userData, setUserData] = useState(null);
@@ -19,6 +19,7 @@ function Dashboard() {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (currentUser) => {
       setUser(currentUser);
+
       if (currentUser) {
         const docRef = doc(db, "users", currentUser.uid);
         const docSnap = await getDoc(docRef);
@@ -31,99 +32,88 @@ function Dashboard() {
 
     return () => unsubscribe();
   }, []);
-  if (!user) return <p>Loading user data...</p>;
+
+  if (!user || !userData) return <p className="text-center mt-10">Loading...</p>;
 
   return (
-    <div>
-      <div className="flex w-[100%] pt-[20vh] pr-6 pl-6">
-        <aside className="border-r rounded-xl leading-[50px] h-[96vh] text-xl pt-[5px] border-purple-700  w-[20%]">
-          <h1>Dashboard</h1>
-          <ul>
-            <li>
-              <span className="inline-block pr-2">
-                <FaUser />
-              </span>
-              Profile
-            </li>
-            <li>
-              <span className="inline-block pr-2">
-                <FaUserEdit />
-              </span>
-              Edit Profile
-            </li>
-            <li>
-              <span className="inline-block pr-2">
-                <FaPlusSquare />
-              </span>
-              Create Post
-            </li>
-            <li>
-              <span className="inline-block pr-2">
-                <FaFileAlt />
-              </span>
-              My Posts
-            </li>
-            <li>
-              <span className="inline-block pr-2">
-                <FaBookmark />
-              </span>
-              Saved Posts
-            </li>
-            <li>
-              <span className="inline-block pr-2">
-                <FaBell />
-              </span>
-              Notifications
-            </li>
-            <li>
-              <span className="inline-block pr-2">
-                <FaCog />
-              </span>
-              Settings
-            </li>
-            <li>
-              <span className="inline-block pr-2">
-                <FaSignOutAlt />
-              </span>
-              Logout
-            </li>
+    <div className="pt-[24vh] px-4 md:px-6">
+      <div className="flex flex-col md:flex-row gap-5">
+
+        {/* 🔹 Sidebar */}
+        <aside className="w-full md:w-[20%] border rounded-xl p-4 border-purple-700">
+          <h1 className="text-xl mb-3">Dashboard</h1>
+
+          <ul className="space-y-3 text-sm md:text-base">
+            <li className="flex items-center gap-2"><FaUser /> Profile</li>
+            <li className="flex items-center gap-2"><FaUserEdit /> Edit Profile</li>
+            <li className="flex items-center gap-2"><FaPlusSquare /> Create Post</li>
+            <li className="flex items-center gap-2"><FaFileAlt /> My Posts</li>
+            <li className="flex items-center gap-2"><FaBookmark /> Saved Posts</li>
+            <li className="flex items-center gap-2"><FaBell /> Notifications</li>
+            <li className="flex items-center gap-2"><FaCog /> Settings</li>
+            <li className="flex items-center gap-2"><FaSignOutAlt /> Logout</li>
           </ul>
         </aside>
 
-        <div className="w-[80%] h-[96vh] grid grid-cols-1 md:grid-cols-[40%_60%]">
-          <div className="grid grid-rows-2">
-            <div className="flex justify-center items-center">
-              <div className="bg-purple-500 rounded-full h-[250px] w-[250px] flex justify-center items-center text-4xl">
-                Profile
-              </div>
-            </div>
-            <div className="flex justify-center gap-3 pt-[10%]">
-              <button className="bg-purple-950 rounded-md py-[10px] text-xl px-[15px] h-fit text-white">
-                follower 10k
-              </button>
-            </div>
-          </div>
-          <div className="">
-            <p>{userData?.name}</p>
-            <p className="text-xl text-[#22c55e]">description</p>
-            <span className="block h-[2px] w-[200px] bg-purple-600 my-2"></span>
-            <p>
-            {userData?.description}
-            </p>
-            <p className="mt-4 text-xl text-[#22c55e]">your skills</p>
-            <span className="block h-[2px] w-[200px] bg-purple-600 my-2"></span>
-            <div className="flex gap-5">
-              <div>
-               {userData?.skills?.map((skills,inx)=>(
-                <p key={inx}>{skills}</p>
-               ))}
-              </div>
+        {/* 🔹 Main Content */}
+        <div className="w-full md:w-[80%] grid grid-cols-1 md:grid-cols-[40%_60%] gap-6">
+
+          {/* LEFT */}
+          <div className="flex flex-col items-center gap-5">
+            <div className="bg-purple-500 rounded-full h-[180px] w-[180px] md:h-[250px] md:w-[250px] flex justify-center items-center text-3xl md:text-4xl">
+              {userData?.name?.charAt(0)}
             </div>
 
-            <p className="mt-4 text-xl text-[#22c55e]">your projects links</p>
-            <span className="block h-[2px] w-[200px] bg-purple-600 my-2"></span>
-            <a href={userData?.projects} target="_blank">project name </a>
+            <button className="bg-purple-950 px-4 py-2 rounded text-white text-sm md:text-base">
+              Followers 10k
+            </button>
           </div>
+
+          {/* RIGHT */}
+          <div>
+            <p className="text-xl md:text-2xl font-bold">
+              {userData?.name}
+            </p>
+
+            {/* Description */}
+            <p className="text-lg text-[#22c55e] mt-3">Description</p>
+            <span className="block h-[2px] w-[150px] bg-purple-600 my-2"></span>
+            <p className="text-sm md:text-base">
+              {userData?.description || "No description added"}
+            </p>
+
+            {/* Skills */}
+            <p className="mt-4 text-lg text-[#22c55e]">Your Skills</p>
+            <span className="block h-[2px] w-[150px] bg-purple-600 my-2"></span>
+
+            <div className="flex gap-2 flex-wrap">
+              {userData?.skills?.map((skill, i) => (
+                <span
+                  key={i}
+                  className="bg-purple-700 px-3 py-1 rounded text-sm"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+
+            {/* Projects */}
+            <p className="mt-4 text-lg text-[#22c55e]">Projects</p>
+            <span className="block h-[2px] w-[150px] bg-purple-600 my-2"></span>
+
+            {userData?.projects ? (
+              <a
+                href={userData.projects}
+                target="_blank"
+                className="text-blue-400 underline text-sm md:text-base"
+              >
+                View Project
+              </a>
+            ) : (
+              <p className="text-sm">No project added</p>
+            )}
+          </div>
+
         </div>
       </div>
     </div>

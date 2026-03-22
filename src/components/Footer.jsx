@@ -4,30 +4,53 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="border-t-2 border-[#273449] text-center pb-[5vh] pt-[5vh] text-xl w-[100%] mt-[10vh] ">
-      <div className="flex justify-center gap-4">
-        <ul className="w-[70%] flex justify-center gap-8 h-fit">
-          <li>back to top</li>
-          <li>Explore</li>
-          <li>help</li>
-          <li>about site</li>
-          <li>language</li>
-          <li>dashboard</li>
+    <div className="border-t-2 border-[#273449] mt-[10vh] px-4 py-8 text-white">
+      
+      {/* 🔹 Top Section */}
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        {/* 🔸 Menu */}
+        <ul className="flex flex-wrap justify-center gap-4 md:gap-8 text-sm md:text-base text-center">
+          <li className="cursor-pointer hover:text-blue-400">Back to top</li>
+
+          <li>
+            <Link to="/explore" className="hover:text-blue-400">
+              Explore
+            </Link>
+          </li>
+
+          <li className="cursor-pointer hover:text-blue-400">Help</li>
+          <li className="cursor-pointer hover:text-blue-400">About</li>
+          <li className="cursor-pointer hover:text-blue-400">Language</li>
+
+          <li>
+            <Link to="/dashboard" className="hover:text-blue-400">
+              Dashboard
+            </Link>
+          </li>
         </ul>
-        <a href="#">
-          <IoLogoInstagram size={30} />
-        </a>
-        <a href="#">
-          <FaTelegramPlane size={30} />
-        </a>
+
+        {/* 🔸 Social Icons */}
+        <div className="flex gap-4">
+          <a href="#" className="hover:text-pink-500">
+            <IoLogoInstagram size={26} />
+          </a>
+          <a href="#" className="hover:text-blue-400">
+            <FaTelegramPlane size={26} />
+          </a>
+        </div>
       </div>
-      <div>
-        <h1 className="text-[#60a5fa] text-lg md:text-2xl mt-[10vh]">
-          <span>{`</DevConnect>`}</span>
+
+      {/* 🔹 Logo */}
+      <div className="text-center mt-8">
+        <h1 className="text-[#60a5fa] text-xl md:text-2xl font-bold">
+          {`</DevConnect>`}
         </h1>
       </div>
-      <div className="text-center text-sm text-gray-400 mt-[5vh]">
-        © 2026 Devconnect
+
+      {/* 🔹 Bottom */}
+      <div className="text-center text-xs md:text-sm text-gray-400 mt-4">
+        © 2026 DevConnect. All rights reserved.
       </div>
     </div>
   );
