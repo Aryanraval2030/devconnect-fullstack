@@ -10,9 +10,8 @@ import {
 } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { auth } from "../firebase/firebaseConfig";
-// import { db } from "../firebase/firebaseConfig";
-import { doc, getDoc } from "firebase/firestore";
-
+import { db } from "../firebase/firebaseConfig";
+import { getDoc } from "firebase/firestore";
 function Dashboard() {
   const [user, setUser] = useState(null);
   const [userData, setUserData] = useState(null);

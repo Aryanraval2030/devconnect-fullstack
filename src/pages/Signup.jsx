@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase/firebaseConfig";
+import { auth, db } from "../firebase/firebaseConfig"; // 👈 db add
+import { doc, setDoc } from "firebase/firestore"; // 👈 add
 import { useNavigate } from "react-router-dom";
 
 function Signup() {
@@ -18,9 +19,26 @@ function Signup() {
     }
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      // 🔥 user create
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      const user = userCredential.user;
+
+      // 🔥 Firestore me document create
+      await setDoc(doc(db, "users", user.uid), {
+        name: "",
+        skills: [],
+      });
+
       alert("Signup successful!");
-      navigate("/dashboard"); // signup ke baad dashboard redirect
+
+      // 👉 edit profile pe bhejo
+      navigate("/edit-profile");
+
     } catch (err) {
       console.log(err.message);
       alert("Signup failed!");
@@ -45,7 +63,6 @@ function Signup() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="p-3 rounded-lg bg-[#0f172a] border border-gray-600 outline-none"
-          autoComplete="off"
         />
 
         <input
@@ -54,7 +71,6 @@ function Signup() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="p-3 rounded-lg bg-[#0f172a] border border-gray-600 outline-none"
-          autoComplete="new-password"
         />
 
         <input
@@ -63,7 +79,6 @@ function Signup() {
           value={confirm}
           onChange={(e) => setConfirm(e.target.value)}
           className="p-3 rounded-lg bg-[#0f172a] border border-gray-600 outline-none"
-          autoComplete="new-password"
         />
 
         <button className="bg-blue-600 p-3 rounded-lg font-semibold hover:bg-blue-700">

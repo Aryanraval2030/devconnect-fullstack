@@ -8,6 +8,7 @@ import ThemeContext from "./components/UserContext";
 import { useContext } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import EditProfile from "./pages/EditProfile";
 
 function App() {
   const { theme } = useContext(ThemeContext); // 🔥 important
@@ -26,6 +27,14 @@ function App() {
           <Route path="/login" element={<Signup />} />
 
           <Route
+            path="/edit-profile"
+            element={
+              <PrivateRoute>
+                <EditProfile />
+              </PrivateRoute>
+            }
+          />
+          <Route
             path="/dashboard"
             element={
               <PrivateRoute>
@@ -34,7 +43,7 @@ function App() {
             }
           />
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </div>
   );
